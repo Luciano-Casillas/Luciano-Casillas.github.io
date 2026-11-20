@@ -1,133 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-       <meta charset="UTF-8" />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <title>Projects — Luciano Casillas Jr.</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="style.css" />
-   </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Luciano Casillas Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
 
-    <nav>
-          <a href="index.html" class="nav-brand">Luciano Casillas Jr.</a>
-          <ul class="nav-links">
-                  <li><a href="index.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
-          </ul>
-    </nav>
+  <nav>
+    <a href="index.html" class="nav-brand">Luciano Casillas Jr.</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
+    </ul>
+  </nav>
 
   <div class="page-hero">
-      <h1>Project Case Studies</h1>
-      <p>End-to-end analytics work in churn prediction, customer satisfaction, and revenue expansion.</p>
+    <h1>Project Case Studies</h1>
+    <p>End-to-end analytics work across insurance, customer operations and workforce analytics.</p>
   </div>
 
   <main>
-        <div class="projects-grid">
+    <h2 class="section-heading">Featured Projects</h2>
+    <div class="projects-grid" id="featured-grid">
+      <noscript>
+        <p>Enable JavaScript to see the featured projects, or browse them on
+          <a href="https://github.com/Luciano-Casillas?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+      </noscript>
+    </div>
 
-                <!-- PROJECT 1: Multiproduct Household Cross-Sell -->
-                <div class="project-card">
-                          <span class="project-tag tag-revenue">Revenue Expansion</span>
-                          <h2>Multiproduct Household Cross-Sell Propensity &amp; Revenue Expansion</h2>
-                          <p>Built to answer a question every insurance growth team is sitting on: which single-product customers are actually ready to buy a second policy?</p>
-                          <p>Using 150,000 synthetic household records, this project scores each household by conversion likelihood and identifies where the real revenue opportunity lives. The model correctly separates likely converters from unlikely ones 69% of the time, well above random. The top 20% of scored households account for 36% of all conversions, meaning a sales team can capture more than a third of total opportunity by contacting only one-fifth of the base.</p>
-                          <p>The analysis puts $280M+ in unconverted customer lifetime value on the map, with quote abandonment and outreach frequency identified as the two clearest signals of purchase intent.</p>
-                          <p>Findings are packaged in a live dashboard and financial simulator built for sales strategy and VP-level audiences.</p>
-                          <hr class="metrics-divider">
-                          <div class="project-metrics">
-                                      <div class="metrics-header">
-                                                    <span class="metrics-label">Results at a glance</span>
-                                                    <span class="metrics-sublabel">Model performance and dataset scale</span>
-                                      </div>
-                                      <div class="badges-row">
-                                                    <span class="badge">AUC 0.69</span>
-                                                    <span class="badge">Top-2 decile: 36% of conversions</span>
-                                                    <span class="badge">$280M+ CLTV opportunity</span>
-                                                    <span class="badge">150K households</span>
-                                      </div>
-                          </div>
-                          <a href="https://github.com/Aztexan512/Multiproduct-Household-Propensity-Model" class="btn-github" target="_blank" rel="noopener">View on GitHub</a>
-                </div>
+    <h2 class="section-heading">Explore by Industry</h2>
+    <div class="explore-grid" id="industry-grid"></div>
 
-                <!-- PROJECT 2: NovaStar Telecom VOC -->
-                <div class="project-card">
-                          <span class="project-tag tag-voc">VOC Analytics</span>
-                          <h2>NovaStar Telecom — VOC Survey Analysis</h2>
-                          <p>Most survey analyses stop at the score. This one asks what happens next. Built on 120,000 synthetic post-interaction survey responses, the project identifies which dissatisfied customers are most likely to churn or escalate, giving outreach teams a clear picture of who to prioritize before the relationship breaks down.</p>
-                          <p>Nearly 41% of surveyed customers fall into the Detractor category, giving the risk model a large and commercially meaningful population to work with. When the model ranks customers by risk, the top 10% convert at 1.82 times the rate of a randomly selected group. The same outreach budget goes significantly further when it is pointed in the right direction.</p>
-                          <p>Resolution ease, wait time, and first-contact resolution surface as the three factors customers care about most. A revenue impact simulator translates all of it into dollar terms for CX and operations leadership.</p>
-                          <hr class="metrics-divider">
-                          <div class="project-metrics">
-                                      <div class="metrics-header">
-                                                    <span class="metrics-label">Results at a glance</span>
-                                                    <span class="metrics-sublabel">Model performance and dataset scale</span>
-                                      </div>
-                                      <div class="badges-row">
-                                                    <span class="badge">AUC 0.81</span>
-                                                    <span class="badge">Top-decile lift 1.82×</span>
-                                                    <span class="badge">120K survey responses</span>
-                                                    <span class="badge">40.6% Detractor rate</span>
-                                      </div>
-                          </div>
-                          <a href="https://github.com/Aztexan512/Customer-Satisfaction-Driver-Analysis" class="btn-github" target="_blank" rel="noopener">View on GitHub</a>
-                </div>
+    <h2 class="section-heading">Explore by Metric</h2>
+    <div class="explore-grid explore-grid-3" id="metric-grid"></div>
 
-                <!-- PROJECT 3: Telecom Customer Churn -->
-                <div class="project-card">
-                          <span class="project-tag tag-churn">Churn &amp; Retention</span>
-                          <h2>Telecom Customer Churn — Cross-Industry Retention Playbook</h2>
-                          <p>Churn is expensive, and the customers most likely to leave rarely announce it. This project builds a predictive model on 225,000 synthetic customer records to identify who is at risk before they cancel, with $32.45M in customer lifetime value (CLTV) on the line across the at-risk population.</p>
-                          <p>The model correctly separates high-risk from low-risk customers 84% of the time, and focusing outreach on the top-scoring 10% produces 1.84 times more retained customers per contact compared to an untargeted approach. Model outputs are explained at the feature level so business stakeholders can see exactly which customer behaviors are driving attrition, rather than simply taking the model's word for it.</p>
-                          <p>The analytical framework is extended to auto insurance non-renewal, showing how the same retention logic applies across industries.</p>
-                          <hr class="metrics-divider">
-                          <div class="project-metrics">
-                                      <div class="metrics-header">
-                                                    <span class="metrics-label">Results at a glance</span>
-                                                    <span class="metrics-sublabel">Model performance and dataset scale</span>
-                                      </div>
-                                      <div class="badges-row">
-                                                    <span class="badge">AUC 0.84</span>
-                                                    <span class="badge">Top-decile lift 1.84×</span>
-                                                    <span class="badge">$32.45M CLTV at risk</span>
-                                                    <span class="badge">225K rows</span>
-                                      </div>
-                          </div>
-                          <a href="https://github.com/Aztexan512/Telco-Churn-Retention-Playbook" class="btn-github" target="_blank" rel="noopener">View on GitHub</a>
-                </div>
-
-        <!-- PROJECT 4: Waypoint P&C Retention Analysis -->
-        <div class="project-card">
-            <span class="project-tag tag-retention">Churn &amp; Retention</span>
-            <h2>Waypoint P&amp;C &#8212; Property &amp; Casualty Retention Analysis</h2>
-            <p>Analyzes 60,081 synthetic auto and renters insurance policies to answer three questions every personal lines carrier faces: who is likely to lapse before renewal, which channel produces the highest-quality customers, and where the cross-sell funnel is leaking premium.</p>
-            <p>AQX-assisted policyholders renew at 81.8% versus 73.0% for non-AQX &#8212; an 8.8pp structural quality advantage confirmed across all eight acquisition cohorts. Billing distress predicts lapse at 1.6&#215; the rate of clean billing histories, surfacing 60 or more days before the renewal window when intervention can still change the outcome.</p>
-            <p>A gradient boosting lapse model with SHAP attribution, 7 Snowflake-compatible SQL queries, and a financial impact simulator are packaged in a 7-tab interactive dashboard for retention strategy and VP-level audiences.</p>
-            <hr class="metrics-divider">
-            <div class="project-metrics">
-                <div class="metrics-header">
-                    <span class="metrics-label">Results at a glance</span>
-                    <span class="metrics-sublabel">Model performance and dataset scale</span>
-                </div>
-                <div class="badges-row">
-                    <span class="badge">AUC 0.61</span>
-                    <span class="badge">Top-decile lift 1.59&#215;</span>
-                    <span class="badge">$5.4M cross-sell opportunity</span>
-                    <span class="badge">60K policies</span>
-                </div>
-            </div>
-            <a href="https://github.com/Aztexan512/Waypoint-Property-and-Casualty-Retention-Analysis" class="btn-github" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-
-        </div>
+    <p class="all-projects-cta">
+      <a class="btn-github" href="all-projects.html">View all projects</a>
+    </p>
   </main>
 
-    <footer>
-          <p>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</p>
+  </footer>
 
+  <script src="projects.js"></script>
+  <script>
+    (function () {
+      var P = window.Portfolio;
+
+      var featured = P.PROJECTS
+        .filter(function (p) { return p.featured > 0; })
+        .sort(function (a, b) { return a.featured - b.featured; });
+      document.getElementById('featured-grid').innerHTML =
+        featured.map(function (p) { return P.cardHTML(p, 'full'); }).join('');
+
+      function count(key, slug) {
+        return P.PROJECTS.filter(function (p) { return p[key] === slug; }).length;
+      }
+      function tiles(list, key) {
+        return list.map(function (x) {
+          var n = count(key, x.slug);
+          var href = key === 'industry' ? P.filterUrl(x.slug, null) : P.filterUrl(null, x.slug);
+          return '<a class="explore-tile" href="' + href + '">' +
+            '<span class="explore-name">' + x.name + '</span>' +
+            '<span class="explore-blurb">' + x.blurb + '</span>' +
+            '<span class="explore-count">' + n + ' project' + (n === 1 ? '' : 's') + ' &rarr;</span>' +
+          '</a>';
+        }).join('');
+      }
+      document.getElementById('industry-grid').innerHTML = tiles(P.INDUSTRIES, 'industry');
+      document.getElementById('metric-grid').innerHTML = tiles(P.METRICS, 'metric');
+    })();
+  </script>
 </body>
 </html>

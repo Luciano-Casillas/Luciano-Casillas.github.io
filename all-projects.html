@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects — Luciano Casillas Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">Luciano Casillas Jr.</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>All Projects</h1>
+    <p>Browse every project by industry or by the metric it moves.</p>
+  </div>
+
+  <main>
+    <p class="back-link"><a href="projects.html">&larr; Back to featured projects</a></p>
+
+    <div class="filter-group">
+      <span class="filter-label">Industry</span>
+      <div class="filter-chips" id="industry-chips"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Metric</span>
+      <div class="filter-chips" id="metric-chips"></div>
+    </div>
+
+    <p class="results-count" id="results-count" aria-live="polite"></p>
+    <div class="projects-grid grid-auto" id="results-grid">
+      <noscript>
+        <p>Enable JavaScript to filter projects, or browse them on
+          <a href="https://github.com/Luciano-Casillas?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+      </noscript>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</p>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script>
+    (function () {
+      var P = window.Portfolio;
+      var state = { industry: '', metric: '' };
+
+      // Only accept known slugs from the URL.
+      function readParams() {
+        var q = new URLSearchParams(window.location.search);
+        var i = q.get('industry'), m = q.get('metric');
+        state.industry = P.find(P.INDUSTRIES, i) ? i : '';
+        state.metric = P.find(P.METRICS, m) ? m : '';
+      }
+
+      function chips(list, key) {
+        var all = '<a class="filter-chip' + (state[key] === '' ? ' active' : '') + '" data-key="' + key +
+          '" data-slug="" href="' + (key === 'industry' ? P.filterUrl(null, state.metric) : P.filterUrl(state.industry, null)) +
+          '">All</a>';
+        return all + list.map(function (x) {
+          var n = P.PROJECTS.filter(function (p) { return p[key] === x.slug; }).length;
+          var href = key === 'industry' ? P.filterUrl(x.slug, state.metric) : P.filterUrl(state.industry, x.slug);
+          return '<a class="filter-chip' + (state[key] === x.slug ? ' active' : '') + '" data-key="' + key +
+            '" data-slug="' + x.slug + '" href="' + href + '">' + x.name + ' <span class="chip-count">' + n + '</span></a>';
+        }).join('');
+      }
+
+      function render() {
+        document.getElementById('industry-chips').innerHTML = chips(P.INDUSTRIES, 'industry');
+        document.getElementById('metric-chips').innerHTML = chips(P.METRICS, 'metric');
+
+        var shown = P.PROJECTS.filter(function (p) {
+          return (!state.industry || p.industry === state.industry) &&
+                 (!state.metric || p.metric === state.metric);
+        });
+        document.getElementById('results-count').textContent =
+          'Showing ' + shown.length + ' of ' + P.PROJECTS.length + ' projects';
+        document.getElementById('results-grid').innerHTML = shown.length
+          ? shown.map(function (p) { return P.cardHTML(p, 'compact'); }).join('')
+          : '<p class="empty-state">No projects match both filters. Try clearing one.</p>';
+      }
+
+      // Chips navigate in place so filters combine without a page reload.
+      document.addEventListener('click', function (e) {
+        var chip = e.target.closest ? e.target.closest('.filter-chip') : null;
+        if (!chip) { return; }
+        e.preventDefault();
+        state[chip.getAttribute('data-key')] = chip.getAttribute('data-slug');
+        history.pushState(null, '', P.filterUrl(state.industry, state.metric));
+        render();
+      });
+      window.addEventListener('popstate', function () { readParams(); render(); });
+
+      readParams();
+      render();
+    })();
+  </script>
+</body>
+</html>
