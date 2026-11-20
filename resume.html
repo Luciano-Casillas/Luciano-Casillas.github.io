@@ -10,12 +10,12 @@
 :root {
 --navy: #0A3360;
 --steel-700: #405E7C;
---blue-700: #0077B3;h
+--blue-700: #0077B3;
 --blue-500: #4EBEE5;
 --steel-300: #D1E2E5;
 --steel-100: #F4F9FA;
 --white: #FFFFFF;
---black: #2D2D2D;hh
+--black: #2D2D2D;
 --gray-700: #707070;
 --green-700: #08CAA9;
 }
@@ -71,6 +71,10 @@ padding-bottom: 0.5rem; margin-bottom: 1.75rem;
 .exp-content ul { padding-left: 1.2rem; }
 .exp-content li { font-size: 0.9rem; color: var(--black); line-height: 1.65; margin-bottom: 0.35rem; }
 
+.res-summary { font-size: 0.93rem; color: var(--black); line-height: 1.7; }
+.res-list { padding-left: 1.2rem; }
+.res-list li { font-size: 0.9rem; color: var(--black); line-height: 1.65; margin-bottom: 0.45rem; }
+
 /* SKILLS GRID */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1.1rem; }
 .skill-group h4 { font-size: 0.84rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
@@ -116,12 +120,28 @@ font-size: 0.82rem; color: var(--steel-300);
 <div class="page-hero">
 <h1>My Resume</h1>
 <p>10+ years delivering dashboards, forecasting, and operational analytics for contact centers and customer experience programs.</p>
-<!-- Upload your PDF to the repo root and update the href -->
 <a class="btn btn-primary" href="Luciano-Casillas-Resume.pdf" target="_blank">Download PDF &#8595;</a>
 </div>
 
 <div class="resume-body">
 
+<!-- SUMMARY -->
+<div class="res-section">
+<div class="res-section-title">Professional Summary</div>
+<p class="res-summary">Data analyst with 10+ years delivering dashboards, forecasting, and operational analytics for contact centers and customer experience programs. Drove a 15% operational efficiency gain through Tableau dashboard infrastructure, reduced reporting cycle time by 30% through multi-source data integration, and quantified $32M+ in at-risk customer revenue in a behavioral churn analysis on a synthetic portfolio dataset.</p>
+</div>
+
+<!-- KEY ACCOMPLISHMENTS -->
+<div class="res-section">
+<div class="res-section-title">Key Accomplishments</div>
+<ul class="res-list">
+<li>Built a multi-agent AI pipeline in Python that scrapes job postings, scores role fit against a candidate profile using a configurable five-factor weighted engine, generates tailored resume and cover letter drafts, and writes outcomes to an Excel tracker with deduplication; reduced manual application preparation time by an estimated 80% across daily use.</li>
+<li>Delivered analytics for four contact center business units at a national telecommunications carrier for seven years, building dashboard infrastructure, exploratory analysis, and forecasting work that directly informed staffing, capacity, and process decisions reviewed at senior and executive leadership levels.</li>
+<li>Quantified $32.45M in 24-month at-risk customer revenue through behavioral churn analysis on 225K synthetic subscriber records and $280M in unconverted projected lifetime value through cross-sell propensity analysis on 150K synthetic customer households in portfolio projects, ranking customers and households so outreach could concentrate on the highest-impact segments.</li>
+<li>Stepped into an interim Retention Manager role earlier in career and led a metric redesign that converted a flat monthly save quota into a percentage-based save rate, phased in quarterly from 22% to 33%, which moved departmental churn performance from the low-60s to 84&#8211;87% within three quarters and earned the department its first-ever quarterly churn bonus.</li>
+<li>Built the business case for a dedicated National Spanish Call Center earlier in career by integrating IVR routing data, translation service call records, and market-level Spanish-speaking population data into a single executive presentation; the proposal was approved, launched with 64 agents across four teams, and every team finished in the top 10 nationally with regular top-5 placement.</li>
+</ul>
+</div>
 <!-- EXPERIENCE -->
 <div class="res-section">
 <div class="res-section-title">Professional Experience</div>
@@ -131,17 +151,19 @@ font-size: 0.82rem; color: var(--steel-300);
 <div class="exp-content">
 <div class="exp-role">Independent Analytics Consultant</div>
 <div class="exp-company">Self-Employed &middot; Austin, TX <span>| Aug 2025 &ndash; Present</span></div>
+<div class="exp-note">All portfolio analytics projects are based on actual work done at Charter Communications, recreated with synthetic data for other industries. The Excel/VBA tracker and AI workflow are real automation work.</div>
 <ul>
-<li>Built a 7-stage Python workflow with Claude and prompt caching that scraped job boards, scored fit, and generated ATS-tailored resumes and cover letters at ~$0.20 per 40-job run, cutting application preparation time by roughly 80%.</li>
-<li>Ran Python and SQL-based EDA and cohort segmentation on 225K telecom subscriber records that isolated early billing and tech-support friction as a 16.7% slice of all churn ($32.45M in at-risk customer lifetime value), then built an XGBoost classifier (AUC 0.84, 1.84&times; top-decile lift) to operationalize the finding into a retention-targeting score.</li>
-<li>Segmented 150K insurance households in Python and SQL by channel, tenure, and behavior, finding that abandoned property quotes converted at 2.4&times; baseline and Elite-tier/independent-agent households converted at 38% (1.5&times; average CLTV), then used the findings to rank-order the remaining $280M cross-sell opportunity for outreach.</li>
-<li>Built a 12-query SQL layer and Python EDA across 120K customer satisfaction surveys that isolated resolution ease, wait time, and first-contact resolution as 69% of dissatisfaction risk and $190M in at-risk lifetime value, translating the findings into a $36.8M net-value recovery business case.</li>
-<li>Ran comparative cohort analysis in SQL and Python on 60K P&amp;C policies that isolated billing distress as a 19-point lapse-rate driver against a 7-point spread for claims history, quantified an 8.8-point retention edge worth $131 in incremental CLTV for a digital acquisition channel, and mapped a cross-sell funnel to a $5.4M renters attachment opportunity.</li>
-<li>Built SQL-driven workforce analytics on 430K HR records in Python that isolated a caseload inflection point (SLA breach rate more than doubling past 25 concurrent cases) and a compensation-ratio risk signal present in 26% of at-risk advisors, then layered an XGBoost model with SHAP explainability (8.1&times; top-decile lift) to flag $4.6M in replacement exposure and build a 4.4:1 ROI case ($125K retention investment projected to return $552K).</li>
-<li>Investigated 200K health insurance claims across 350 providers using SQL and Python, isolating prior-authorization delays as 35% of denied dollars ($10.4M) and coverage-limit gaps as a previously unmeasured $4.07M opportunity at a 59% appeal-success rate, against a $14.8M full-recovery ceiling.</li>
-<li>Ran Python and SQL EDA on 15K health plan EDI enrollment transactions across four lines of business that isolated a 2&times; rejection-rate gap between Duals/Marketplace (18%+) and Medicare (8.7%) and a 43% multi-line-of-business coverage exposure rate, then layered a logistic regression risk model (1.65&times; decile-1 lift) to flag high-risk transactions before submission.</li>
-<li>Built a Python and SQL funnel analysis on 120K call center leads across 45 clinics that isolated callback speed as the strongest scheduling lever (53.9% vs. 43.7% conversion within 15 vs. 60+ minutes) and quantified $109.6M in scheduled-but-unconverted revenue, then layered a logistic regression model (1.54&times; decile lift, QA score as the top driver) to rank leads for weekly intervention.</li>
-<li>Automated an Excel tracking workflow with VBA for an 11-person operations team, replacing manual documentation with daily reporting and monthly recaps that freed analyst time for coaching.</li>
+<li>Built a 7-stage Python workflow with Claude and prompt caching to scrape job boards, score role fit, and generate ATS-optimized resumes and cover letters at $0.20 per 40-job run, cutting application prep time by 80%.</li>
+<li>Ran SQL and Python EDA on 225K telecom subscriber records to expose early billing and tech-support friction as a 16.7% churn driver ($32.45M in 24-month revenue exposure). Built an XGBoost classifier (AUC 0.84, 1.84x top-decile lift on a 20% holdout) to rank customers for retention targeting.</li>
+<li>Segmented 150K insurance households using Python and SQL across channel, tenure, and behavior cohorts, revealing that households that started a property quote converted at 1.5x the baseline rate (38.3% vs. 26.1%) and Elite-tier independent-agent auto households at 33% (1.3x average CLTV). Sized the remaining $280M unconverted cross-sell opportunity and ranked households with a gradient boosting propensity model (AUC 0.69, 2.05x top-decile lift).</li>
+<li>Engineered a 12-query SQL layer paired with Python EDA across 120K customer satisfaction surveys, where resolution ease, wait time, and first-contact resolution drive 69% of detractor model importance (gradient boosting AUC 0.81, 1.82x top-decile lift). Modeled an $8.2M net-value recovery scenario at an assumed 20% save rate and $25 per contact.</li>
+<li>Diagnosed billing distress as a 13-point lapse-rate driver (36% vs. 23%) via SQL and Python cohort analysis on 60K P&amp;C policies (vs. 7-point for claims severity). Quantified an 8.8-point renewal edge (81.8% vs. 73.0%) for policies written through the AQX digital quoting platform, worth about $130 more 36-month CLTV per policy, and found 26,033 auto-only policies (60%) never quoted a renters add-on.</li>
+<li>Constructed a workforce analytics pipeline in Python and SQL across 430K HR records, detecting a caseload effect (SLA breaches rising from 11.9% below 15 open cases to 26.6% at 30+) and a compensation signal (27% of advisors paid below 0.90 of band midpoint; 19.9% attrition vs. 3.1% for the rest). Built an XGBoost model with SHAP explainability (about 7x top-decile lift, 5-fold cross-validated) to rank advisors by attrition risk, sized at $4.6M in replacement cost across the 84 advisors who left within 90 days.</li>
+<li>Investigated 200K health insurance claims across 350 providers using SQL and Python to uncover prior-authorization delays as 35% of denied dollars ($10.4M) and a previously unmeasured $4.07M coverage-limit denial category with a 59% appeal success rate (approved or partially approved), plus a two-proportion test showing network status did not drive denials (3.95% vs. 3.87%, p=0.44).</li>
+<li>Built a logistic regression rejection-risk model (test AUC 0.637, 1.65x decile-1 lift) on 15K health plan enrollment transactions across four lines of business, using Python and SQL to flag a 2x rejection-rate gap between Duals/Marketplace (18%+) and Medicare (8.7%) plus 3,567 members (43%) with coverage across more than one line of business.</li>
+<li>Constructed a Python- and SQL-based funnel analysis on 120K call center leads across 45 clinics to surface callback speed as the strongest scheduling lever (52.9% vs. 37.7% scheduling rate for callbacks within 15 vs. 60+ minutes). Built a logistic regression model (QA score as top driver) to rank scheduled leads for follow-up against about $110M in scheduled-but-unconverted order value ($62.7M realized).</li>
+<li>Reconciled multiple operational data sources for a 34K-shift labor marketplace using Python and SQL and found that shifts posted under 12 hours ahead go unfilled 47.9% of the time vs. 13.0% at 48+ hours. Specified a randomized pilot to test an intervention (not run).</li>
+<li>Automated an Excel tracking workflow with VBA for an 11-person operations team, replacing manual documentation with daily reporting and monthly recaps to free analyst time for strategic coaching.</li>
 </ul>
 </div>
 </div>
@@ -161,6 +183,7 @@ font-size: 0.82rem; color: var(--steel-300);
 <li>Maintained GitHub- and SharePoint-based analytics artifacts with leadership review to ensure reproducible, audit-ready reporting in a regulated telecommunications environment.</li>
 <li>Delivered executive-facing trend analysis and KPI reporting that strengthened strategic decision-making for senior and executive leadership.</li>
 <li>Managed simultaneous analytics requests across multiple business units by prioritizing high-impact work and aligning delivery with evolving business priorities.</li>
+<li>Mentored six junior analysts from vendor partner R Systems during the department's transition, March 2025 through July 2025.</li>
 </ul>
 </div>
 </div>
@@ -181,10 +204,22 @@ font-size: 0.82rem; color: var(--steel-300);
 <div class="exp-item">
 <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
 <div class="exp-content">
+<div class="exp-role">Rideshare Driver (Independent Contractor)</div>
+<div class="exp-company">Uber and Lyft &middot; Austin, TX <span>| Aug 2017 &ndash; Dec 2018</span></div>
+<ul>
+<li>Operated as a 1099 independent contractor on the Uber and Lyft platforms, managing own schedule, vehicle, and expenses as a self-employed business.</li>
+<li>Provided direct customer service to riders in person and through the platform apps, resolving issues in real time while meeting platform service-quality standards.</li>
+</ul>
+</div>
+</div>
+
+<div class="exp-item">
+<div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+<div class="exp-content">
 <div class="exp-role">Call Center Supervisor</div>
 <div class="exp-company">Centene Corporation (Cenpatico) &middot; Austin, TX <span>| Jan 2013 &ndash; Aug 2017</span></div>
 <ul>
-<li>Supervised 12&ndash;23 representatives across a multi-state government-contract operation while maintaining SLA compliance and quality standards for every state served.</li>
+<li>Supervised 12&#8211;23 representatives across a multi-state government-contract operation while maintaining SLA compliance and quality standards for every state served.</li>
 <li>Monitored queue performance in real time with Avaya and CRM tools, adjusting staffing and routing to meet contract requirements and support compliance.</li>
 <li>Applied behavioral-based coaching methods with NICE QA audits that sustained team quality scores above 94% and strengthened coaching consistency across supervised teams.</li>
 <li>Built Excel-based coaching documentation and performance tracking tools that became the standard for supervisors across the organization, reducing administrative effort and standardizing coaching practices.</li>
@@ -227,7 +262,7 @@ font-size: 0.82rem; color: var(--steel-300);
 <div class="exp-role">Technical Team Supervisor</div>
 <div class="exp-company">DIRECTV &middot; Tulsa, OK <span>| Oct 2004 &ndash; Sep 2008</span></div>
 <ul>
-<li>Led a team of 12&ndash;18 billing and technical support agents while maintaining quality, attendance, and schedule adherence expectations in a high-volume contact center.</li>
+<li>Led a team of 12&#8211;18 billing and technical support agents while maintaining quality, attendance, and schedule adherence expectations in a high-volume contact center.</li>
 <li>Applied behavioral-based coaching methods with Excel-based dashboards that made performance conversations more targeted and productive for individual agents.</li>
 <li>Sustained team quality scores above 94% through regular call calibrations and consistent coaching without sacrificing handle time or schedule adherence.</li>
 </ul>
@@ -240,9 +275,9 @@ font-size: 0.82rem; color: var(--steel-300);
 <div class="exp-role">Progressive Roles: Bilingual CSR &rarr; National Spanish Call Center Supervisor</div>
 <div class="exp-company">US Cellular &middot; Tulsa, OK <span>| Jul 1999 &ndash; Aug 2004</span></div>
 <ul>
-<li>Started as one of 88 bilingual agents during US Cellular's transition to a five-region national call center model and advanced to supervisor within the first year.</li>
-<li>Supervised 18&ndash;32 representatives across general and bilingual customer service teams while building Excel-based tracking dashboards for QA, attendance, schedule adherence, and product knowledge.</li>
-<li>Stepped into an interim Retention Manager role and redesigned the save metric from a flat monthly goal to a percentage-based save rate, improving departmental churn performance from the low-60s to 84&ndash;87% within three quarters.</li>
+<li>Started as one of 88 bilingual agents during US Cellular&#8217;s transition to a five-region national call center model and advanced to supervisor within the first year.</li>
+<li>Supervised 18&#8211;32 representatives across general and bilingual customer service teams while building Excel-based tracking dashboards for QA, attendance, schedule adherence, and product knowledge.</li>
+<li>Stepped into an interim Retention Manager role and redesigned the save metric from a flat monthly goal to a percentage-based save rate, improving departmental churn performance from the low-60s to 84&#8211;87% within three quarters.</li>
 <li>Used structured testing of retention offer sequencing to set a consistent team standard and improve attachment outcomes across conversations.</li>
 <li>Pulled IVR routing and translation-service data across five regional centers to build the business case for a dedicated National Spanish Call Center, which launched with 64 agents across four teams and achieved top-10 national placement.</li>
 <li>Designed training programs and coaching tools for bilingual agents, strengthening product knowledge and performance consistency across the team.</li>
@@ -299,6 +334,12 @@ font-size: 0.82rem; color: var(--steel-300);
 <!-- CERTIFICATIONS -->
 <div class="res-section">
 <div class="res-section-title">Certifications &amp; Professional Development</div>
+<div class="cert-item">
+<div>
+<div class="cert-name">IBM Data Science Certification</div>
+<div class="cert-org">IBM &middot; In Progress</div>
+</div>
+</div>
 <div class="cert-item">
 <div>
 <div class="cert-name">Data Science with SQL and Tableau</div>
